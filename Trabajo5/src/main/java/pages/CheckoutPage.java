@@ -30,9 +30,23 @@ public class CheckoutPage {
     @FindBy(id = "continue")
     WebElement continuar;
 
+    @FindBy(id = "remove-sauce-labs-backpack")
+    WebElement removeBackpack;
+
+    @FindBy(id = "remove-sauce-labs-bolt-t-shirt")
+    WebElement removeTShirt;
+
     @FindBy(tagName = "h3")
     WebElement chekoutError;
 
+    @FindBy(className = "shopping_cart_badge")
+    WebElement cartIcon;
+
+    @FindBy(className = "inventory_item_name")
+    List<WebElement> itemNamesLabel;
+
+    @FindBy(className = "inventory_item_price")
+    List<WebElement> itemPricesLabel;
     public String getCheckoutErrorMessage(){
         String errorMessage = chekoutError.getText();
         return errorMessage;
@@ -58,4 +72,46 @@ public class CheckoutPage {
     }
 
     public void clickOnContinue(){ continuar.click(); }
+
+    public void clickOnRemoveBackpack(){ removeBackpack.click(); }
+
+    public void clickOnRemoveTShirt(){ removeTShirt.click(); }
+
+   // public String getPriceText(){
+   //     String Price = cartIcon.getText();
+   //     return Price;
+   // }
+
+    public String getCartIconText(){
+        String cartText = cartIcon.getText();
+        return cartText;
+    }
+
+    public List<String> getItemNames(){
+        List<String> names = new ArrayList<>();
+
+        for (WebElement itemname: itemNamesLabel) {
+            String itemNameText = itemname.getText();
+            StringBuilder sb = new StringBuilder(itemNameText);
+            sb.deleteCharAt(0);
+            names.add(sb.toString());
+        }
+        return names;
+    }
+
+    public List<Double> getItemPrices(){
+        List<Double> prices = new ArrayList<>();
+
+        for (WebElement itemPrice: itemPricesLabel) {
+            String itemPriceText = itemPrice.getText();
+            StringBuilder sb = new StringBuilder(itemPriceText);
+            sb.deleteCharAt(0);
+            prices.add(Double.parseDouble(sb.toString()));
+        }
+        return prices;
+    }
+
+
+
+
 }

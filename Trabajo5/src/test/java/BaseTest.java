@@ -14,7 +14,7 @@ public class BaseTest {
 
     @AfterClass
     public static void cleanUp(){
-        DriverManager.getDriver().driver.close();
+       // DriverManager.getDriver().driver.close();
 
     }
 

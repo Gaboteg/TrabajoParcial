@@ -41,7 +41,7 @@ public class CheckoutTests extends BaseTest{
         homepage.clickOnMenuButton();
         homepage.clickOnLogout();
         Assert.assertTrue(loginPage.loginButtonIsDisplayed());
-        //Thread.sleep(1000);
+        //Thread.sleep(2500);
         LoginPage loginPage2 = new LoginPage(DriverManager.getDriver().driver);
         loginPage2.setUserNameTextBox("standard_user");
         loginPage2.setPasswordTextBox("secret_sauce");

@@ -26,6 +26,9 @@ public class Homepage {
     @FindBy(id = "add-to-cart-sauce-labs-backpack")
     WebElement sauceLabsBackPackAddToCartButton;
 
+    @FindBy(id = "add-to-cart-sauce-labs-bolt-t-shirt")
+    WebElement sauceLabsTShirtAddToCartButton;
+
     @FindBy(id = "remove-sauce-labs-backpack")
     WebElement sauceLabsBackPackRemoveToCartButton;
 
@@ -67,6 +70,9 @@ public class Homepage {
 
     public void clickOnAddSauceLabsBackPackToCartButton(){
         sauceLabsBackPackAddToCartButton.click();
+    }
+    public void clickOnAddSauceLabsTShirtToCartButton(){
+        sauceLabsTShirtAddToCartButton.click();
     }
 
     public void clickOnRemoveSauceLabsBackPackToCartButton(){
