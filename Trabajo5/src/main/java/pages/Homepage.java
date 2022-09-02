@@ -122,8 +122,8 @@ public class Homepage {
     public List<String> getAllItemNames(){
         List<String> names = new ArrayList<>();
 
-        for (WebElement itemname: itemNamesLabel) {
-            String itemNameText = itemname.getText();
+        for (WebElement itemName: itemNamesLabel) {
+            String itemNameText = itemName.getText();
             StringBuilder sb = new StringBuilder(itemNameText);
             sb.deleteCharAt(0);
             names.add(sb.toString());
